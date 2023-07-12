@@ -1,0 +1,62 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y
+
+def square(x):
+    return x**2
+
+def calculator():
+    while True:
+        print("Menu:")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        print("5. Square")
+        print("6. Exit")
+
+        choice = int(input("Enter your choice (1-6): "))
+
+        if choice == 6:
+            print("Exiting. Goodbye!!")
+            break
+        
+        if choice == 5:
+            num = float(input("Enter a number: "))
+            if num >= 0:
+                result = square(num)
+                print("Result:", result)
+            else:
+                print("Error: Please enter a non-negative number!")
+            continue
+
+        num1 = float(input("Choose x: "))
+        num2 = float(input("Choose y: "))
+
+        if choice == 1:
+            result = add(num1, num2)
+            print("Result:", result)
+        elif choice == 2:
+            result = subtract(num1, num2)
+            print("Result:", result)
+        elif choice == 3:
+            result = multiply(num1, num2)
+            print("Result:", result)
+        elif choice == 4:
+            if num2 != 0:
+                result = divide(num1, num2)
+                print("Result:", result)
+            else:
+                print("Error: Cannot divide by zero")
+        else:
+            print("Invalid Choice. Please try again. \n")
+
+calculator()
